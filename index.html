@@ -4,20 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Advanced JavaScript</title>
-    <script src="app.js" defer></script>
-    <link rel="stylesheet" href="styles.css">
+    <script src="demo.js" defer></script>
+    <link rel="stylesheet" href="styles2.css" />
   </head>
   <body>
-   <p>Clink Me!</p>
-   <input type="text">
+    <form>
+      <div class="control">
+        <label for="product-Name"><strong>Product Name</strong></label>
+
+        <input
+          type="text"
+          id="product-Name"
+          name="product-Name"
+          maxlength="60"
+        />
+        <span id="charcount"> <span id="remaining-chars">60</span>/60 </span>
+      </div>
+      <button>Submit</button>
+    </form>
   </body>
 </html>
-
-
-
-   <!-- <h1 id="dude">My dudes</h1>
-    <p>I like boobies</p>
-    <p class="pclass">
-      This is a
-      <a id="external-link" href="#">link</a>
-    </p>
