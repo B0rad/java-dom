@@ -3,30 +3,57 @@
 // 1) Select the two <button> elements and store them in two different variables.
 //    - Select the first button without adding or using any "id"
 //    - Select the second button by using an "id"
-const buttonOne = document.getElementById('button');
-const buttonTwo = document.getElementById('button-two');
-
+const bOne = document.querySelector("button");
+const buttonTwo = document.getElementById("button-two");
 
 // 2) Add "click" event listener to both buttons (with two different functions).
 //    The functions should "console.dir()" the clicked buttons.
 //    - Output the first button by using the variable in which it's stored
-//    - Output the second button WITHOUT using the variable in which it's stored
+//    - Output the second button WITHOUT using the variable in which it's stored "document.querySelector"
 
-document.getElementById(buttonOne).addEventListener('click',buttonClick)
-function buttonClick() {
-    document.getElementById('buttonOne')
-    console.dir(buttonClick)
+// function removeParagraph() {
+//   console.dir(bOne);
+// }
 
-}
-buttonClick()
+// function changeBackgroundColour(event){
+//     console.dir(event.target);
+// }
+
+// bOne.addEventListener("click", removeParagraph);
+// buttonTwo.addEventListener("click", changeBackgroundColour)
 
 // 3) Now select and store the paragraphs mentioned in the text you see on the page
 //    (first and third paragraph)
 //    - Select BOTH paragraphs by drilling into the document and "navigating" to the
 //      mentioned elements
 //    - If you struggle with DOM drilling, use "ids" instead but watch the solution!
+
+const firstParagraphElement = document.body.children[2].children[1];
+console.log(firstParagraphElement);
+
+// const thirdParagraphElement = document.body.children[2].children[3] or-->
+const thirdParagraphElement =
+  firstParagraphElement.nextElementSibling.nextElementSibling;
+console.log(thirdParagraphElement);
+
 // 4) Change the functions from (2) such that:
 //    - The first button removes the third paragraph (i.e. the <p> prior to it)
 //    - The second button changes the background color of the first paragraph to blue
+
+function removeParagraph() {
+  console.dir(bOne);
+  thirdParagraphElement.remove();
+}
+
+function changeBackgroundColour(event) {
+  //   firstParagraphElement.style.backgroundColor = "blue";
+  // firstParagraphElement.className = "blue-bg";
+  firstParagraphElement.classList.add('blue-bg')
+  console.dir(event.target);
+}
+
+bOne.addEventListener("click", removeParagraph);
+buttonTwo.addEventListener("click", changeBackgroundColour);
+
 // 5) Solve (4) both by changing the "inline styles" as well as by adding CSS classes
 //    Note: You'll have to add those classes to the styles.css file first!
